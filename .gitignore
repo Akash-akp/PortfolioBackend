@@ -4,7 +4,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 .env.properties
-.mvn
 .DS_Store
 
 ### STS ###
