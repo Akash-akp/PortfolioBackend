@@ -1,0 +1,37 @@
+spring:
+  config:
+    import: optional:file:.env.properties
+  application:
+    name: portfolio-backend
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+
+server:
+  port: ${SERVER_PORT}
+  servlet:
+    context-path: /
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS}
+  admin:
+    username: ${ADMIN_USERNAME}
+    password: ${ADMIN_PASSWORD}
+
+logging:
+  level:
+    org.springframework.security: INFO
+    com.portfolio: INFO
